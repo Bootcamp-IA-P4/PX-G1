@@ -1,0 +1,28 @@
+# Data files (too large for Git)
+*.csv
+*.xlsx
+*.xls
+
+# Python
+__pycache__/
+.python-version
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
