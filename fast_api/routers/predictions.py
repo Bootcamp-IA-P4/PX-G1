@@ -1,21 +1,22 @@
 from fastapi import APIRouter
-from fastapi import HTTPException
-from fastapi import status
-from fastapi import Depends
-from fastapi.responses import JSONResponse
-from schemas import PredictionRequest, PredictionResponse
-from config import MODEL_VERSION 
+from ..schemas import PredictionRequest, PredictionResponse
+from ..config import MODEL_VERSION
+from ..supabase_client import supabase
 
 router = APIRouter()
 
-# Por ahora vamos a usar una predicción simulada (ficticia)
-@router.post("/predict", response_model=PredictionResponse, status_code=status.HTTP_200_OK)
+@router.post("/predict", response_model=PredictionResponse)
 def predict(request: PredictionRequest):
     text = request.text
-
-    # Simulamos una "predicción"
     is_toxic = "hate" in text.lower() or "stupid" in text.lower()
-    model_version = "v1.0-mock"
+
+    # Guardar en Supabase con el SDK
+    if supabase:
+        supabase.table("predictions").insert({
+            "text": text,
+            "is_toxic": is_toxic,
+            "model_version": MODEL_VERSION
+        }).execute()
 
     return PredictionResponse(
         text=text,
