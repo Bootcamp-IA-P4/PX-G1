@@ -1,6 +1,6 @@
 import os
 import joblib
-import numpy as np
+
 
 # Ruta segura a la carpeta del modelo
 BASE_PATH = os.path.dirname(os.path.dirname(__file__))
