@@ -1,5 +1,6 @@
 from fastapi import FastAPI
-from routers import predictions 
+from fast_api.routers import predictions
+ 
 
 # Creamos la app FastAPI
 app = FastAPI(title="Toxic Comment Classifier API")
