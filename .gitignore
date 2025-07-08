@@ -3,6 +3,8 @@
 *.xlsx
 *.xls
 best_model/
+processed_data/
+nltk_data/
 
 # Python
 __pycache__/
