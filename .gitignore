@@ -29,7 +29,8 @@ venv/
 Thumbs.db
 
 
-*.pkl
 *.pth
 
 models/results/
+nltk_data/
+processed_data/
