@@ -15,6 +15,7 @@ class PredictionRecord(BaseModel):
     id: str
     text: str
     is_toxic: bool
+    toxicity_score: Optional[float]
     model_version: Optional[str]
     created_at: datetime
 

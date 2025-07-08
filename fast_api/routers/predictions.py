@@ -19,6 +19,7 @@ def predict(request: PredictionRequest):
             supabase.table("predictions").insert({
                 "text": text,
                 "is_toxic": is_toxic,
+                "toxicity_score": toxicity_score,
                 "model_version": MODEL_VERSION
             }).execute()
         except Exception as e:
