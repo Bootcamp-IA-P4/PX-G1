@@ -4,6 +4,7 @@ from typing import List
 from ..schemas import PredictionRequest, PredictionResponse, PredictionRecord
 from ..config import MODEL_VERSION
 from ..supabase_client import supabase
+from ..model_loader import predict_label
 
 router = APIRouter()
 
@@ -11,7 +12,7 @@ router = APIRouter()
 @router.post("/predict", response_model=PredictionResponse)
 def predict(request: PredictionRequest):
     text = request.text
-    is_toxic = "hate" in text.lower() or "stupid" in text.lower()
+    is_toxic = predict_label(text)
 
     if supabase:
         try:
