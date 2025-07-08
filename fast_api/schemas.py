@@ -8,6 +8,7 @@ class PredictionRequest(BaseModel):
 class PredictionResponse(BaseModel):
     text: str
     is_toxic: bool
+    toxicity_score: float
     model_version: Optional[str] = None
 
 class PredictionRecord(BaseModel):
