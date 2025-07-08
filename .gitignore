@@ -32,3 +32,5 @@ Thumbs.db
 *.pth
 
 models/results/
+nltk_data/
+processed_data/
