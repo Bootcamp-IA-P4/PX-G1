@@ -200,4 +200,4 @@ wrapt==1.17.2
 xgboost==3.0.2
 xxhash==3.5.0
 yarl==1.20.1
-logging=0.4.9.6
+logging==0.4.9.6

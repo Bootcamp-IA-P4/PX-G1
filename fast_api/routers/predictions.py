@@ -5,7 +5,7 @@ from ..schemas import PredictionRequest, PredictionResponse, PredictionRecord
 from ..config import MODEL_VERSION
 from ..supabase_client import supabase
 from ..model_loader import predict_label_with_score
-
+from ..utils.fallback import save_to_fallback
 import logging
 from logs.setup_loggers import setup_logging
 setup_logging()
@@ -33,8 +33,18 @@ def predict(request: PredictionRequest):
 
         except Exception as e:
             logging.error(f"Error al guardar predicción en Supabase: {e}")
-            print(f"❌ Error al guardar predicción en Supabase: {e}")
-            raise HTTPException(status_code=500, detail="Error saving prediction")
+            logging.warning("Guardando predicción localmente como fallback.")
+    
+            # Preparamos el diccionario de predicción
+            fallback_data = {
+                "text": text,
+                "is_toxic": is_toxic,
+                "toxicity_score": toxicity_score,
+                "model_version": MODEL_VERSION
+            }
+
+    save_to_fallback(fallback_data)
+
 
     return PredictionResponse(
         text=text,
