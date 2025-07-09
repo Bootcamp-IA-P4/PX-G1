@@ -4,7 +4,7 @@ from typing import List
 from ..schemas import PredictionRequest, PredictionResponse, PredictionRecord
 from ..config import MODEL_VERSION
 from ..supabase_client import supabase
-from ..model_loader import predict_label
+from ..model_loader import predict_label_with_score
 
 router = APIRouter()
 
@@ -12,13 +12,14 @@ router = APIRouter()
 @router.post("/predict", response_model=PredictionResponse)
 def predict(request: PredictionRequest):
     text = request.text
-    is_toxic = predict_label(text)
+    is_toxic, toxicity_score = predict_label_with_score(text)
 
     if supabase:
         try:
             supabase.table("predictions").insert({
                 "text": text,
                 "is_toxic": is_toxic,
+                "toxicity_score": toxicity_score,
                 "model_version": MODEL_VERSION
             }).execute()
         except Exception as e:
@@ -28,6 +29,7 @@ def predict(request: PredictionRequest):
     return PredictionResponse(
         text=text,
         is_toxic=is_toxic,
+        toxicity_score=toxicity_score,
         model_version=MODEL_VERSION
     )
 
