@@ -40,3 +40,4 @@ processed_data/
 
 
 .pytest_cache/
+logs.log

@@ -6,13 +6,20 @@ from ..config import MODEL_VERSION
 from ..supabase_client import supabase
 from ..model_loader import predict_label
 
+import logging
+from logs.setup_loggers import setup_logging
+setup_logging()
+
 router = APIRouter()
 
 # POST /predict
 @router.post("/predict", response_model=PredictionResponse)
 def predict(request: PredictionRequest):
     text = request.text
+    logging.info(f"Recibida solicitud de predicción: '{text}'")
+
     is_toxic = predict_label(text)
+    logging.debug(f"Resultado de predicción: is_toxic={is_toxic}")
 
     if supabase:
         try:
@@ -21,7 +28,10 @@ def predict(request: PredictionRequest):
                 "is_toxic": is_toxic,
                 "model_version": MODEL_VERSION
             }).execute()
+            logging.info(f"Predicción guardada en Supabase correctamente. 'text': {text}, 'is_toxic': {is_toxic}")
+
         except Exception as e:
+            logging.error(f"Error al guardar predicción en Supabase: {e}")
             print(f"❌ Error al guardar predicción en Supabase: {e}")
             raise HTTPException(status_code=500, detail="Error saving prediction")
 
@@ -34,7 +44,10 @@ def predict(request: PredictionRequest):
 # GET /history
 @router.get("/history", response_model=List[PredictionRecord])
 def get_history(limit: int = 10):
+    logging.info(f"Solicitud de historial de predicciones, limit={limit}")
+
     if not supabase:
+        logging.warning("Supabase no está inicializado")
         raise HTTPException(status_code=500, detail="Supabase not initialized")
 
     try:
@@ -45,7 +58,9 @@ def get_history(limit: int = 10):
             .limit(limit)
             .execute()
         )
+        logging.info(f"{len(response.data or [])} registros recuperados del historial.")
         return response.data or []
     except Exception as e:
+        logging.error(f"Error al obtener historial: {e}")
         print(f"❌ Error al obtener historial: {e}")
         raise HTTPException(status_code=500, detail="Error querying Supabase")

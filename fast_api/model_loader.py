@@ -1,5 +1,8 @@
 import os
 import joblib
+import logging
+from logs.setup_loggers import setup_logging
+setup_logging()
 
 # Ruta a la carpeta final_model
 BASE_PATH = os.path.dirname(os.path.dirname(__file__))
@@ -15,4 +18,5 @@ model = joblib.load(MODEL_PATH)
 def predict_label(text: str) -> bool:
     X = vectorizer.transform([text])
     prediction = model.predict(X)
+    logging.info(f"Predicción realizada para el texto: {text}")
     return bool(prediction[0])
