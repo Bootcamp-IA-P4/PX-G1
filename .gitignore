@@ -37,3 +37,7 @@ Thumbs.db
 models/results/
 nltk_data/
 processed_data/
+
+
+.pytest_cache/
+logs.log

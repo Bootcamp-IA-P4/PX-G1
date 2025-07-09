@@ -1,8 +1,10 @@
 import os
 import joblib
+import logging
+from logs.setup_loggers import setup_logging
+setup_logging()
 
-
-# Ruta segura a la carpeta del modelo
+# Ruta a la carpeta final_model
 BASE_PATH = os.path.dirname(os.path.dirname(__file__))
 MODEL_DIR = os.path.join(BASE_PATH, "final_model")
 
@@ -24,4 +26,5 @@ def predict_label_with_score(text: str) -> tuple[bool, float]:
     toxicity_score = float(proba[0][1]) 
 
     is_toxic = toxicity_score >= 0.5  
+    logging.info(f"Predicción realizada para el texto: {text}")
     return is_toxic, toxicity_score
