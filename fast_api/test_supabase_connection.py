@@ -1,3 +1,6 @@
+import sys
+import os
+sys.path.append(os.path.dirname(__file__))
 from supabase_client import supabase
 
 print("🔄 Probando conexión con Supabase...")
