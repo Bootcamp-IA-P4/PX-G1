@@ -4,7 +4,7 @@ from typing import List
 from ..schemas import PredictionRequest, PredictionResponse, PredictionRecord
 from ..config import MODEL_VERSION
 from ..supabase_client import supabase
-from ..model_loader import predict_label
+from ..model_loader import predict_label_with_score
 
 import logging
 from logs.setup_loggers import setup_logging
@@ -18,17 +18,18 @@ def predict(request: PredictionRequest):
     text = request.text
     logging.info(f"Recibida solicitud de predicción: '{text}'")
 
-    is_toxic = predict_label(text)
-    logging.debug(f"Resultado de predicción: is_toxic={is_toxic}")
+    is_toxic, toxicity_score = predict_label_with_score(text)
+    logging.debug(f"Resultado de predicción: is_toxic={is_toxic} con toxicity_score={toxicity_score}")
 
     if supabase:
         try:
             supabase.table("predictions").insert({
                 "text": text,
                 "is_toxic": is_toxic,
+                "toxicity_score": toxicity_score,
                 "model_version": MODEL_VERSION
             }).execute()
-            logging.info(f"Predicción guardada en Supabase correctamente. 'text': {text}, 'is_toxic': {is_toxic}")
+            logging.info(f"Predicción guardada en Supabase correctamente. 'text': {text}, 'is_toxic': {is_toxic}, 'toxicity_score': {toxicity_score}")
 
         except Exception as e:
             logging.error(f"Error al guardar predicción en Supabase: {e}")
@@ -38,6 +39,7 @@ def predict(request: PredictionRequest):
     return PredictionResponse(
         text=text,
         is_toxic=is_toxic,
+        toxicity_score=toxicity_score,
         model_version=MODEL_VERSION
     )
 
