@@ -1,0 +1,9 @@
+[
+  {
+    "text": "probando uno dos",
+    "is_toxic": false,
+    "toxicity_score": 0.4234939217567444,
+    "model_version": "v1.0-mock",
+    "saved_at": "2025-07-09T11:18:30.579160"
+  }
+]
