@@ -17,6 +17,7 @@ class TestHistoryEndpoint(unittest.TestCase):
                 "id": "1",
                 "text": "sample",
                 "is_toxic": True,
+                "toxicity_score": 0.85,
                 "model_version": "v1.0",
                 "created_at": "2024-01-01T00:00:00"
             }
@@ -31,6 +32,7 @@ class TestHistoryEndpoint(unittest.TestCase):
         self.assertGreaterEqual(len(data), 1)
         self.assertIn("text", data[0])
         self.assertIn("is_toxic", data[0])
+        self.assertIn("toxicity_score", data[0])
         self.assertIn("id", data[0])
 
     @patch("fast_api.routers.predictions.supabase", None)

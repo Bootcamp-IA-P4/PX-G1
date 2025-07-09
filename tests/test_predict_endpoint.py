@@ -9,10 +9,10 @@ class TestPredictEndpoint(unittest.TestCase):
     def setUpClass(cls):
         cls.client = TestClient(app)
 
-    @patch("fast_api.routers.predictions.predict_label")
+    @patch("fast_api.routers.predictions.predict_label_with_score")
     @patch("fast_api.routers.predictions.supabase")
-    def test_predict_endpoint(self, mock_supabase, mock_predict_label):
-        mock_predict_label.return_value = True
+    def test_predict_endpoint(self, mock_supabase, mock_predict_label_with_score):
+        mock_predict_label_with_score.return_value = (True, 0.95)
 
         mock_table = MagicMock()
         mock_table.insert.return_value.execute.return_value = None
@@ -24,6 +24,7 @@ class TestPredictEndpoint(unittest.TestCase):
         data = response.json()
         self.assertEqual(data["text"], "You are horrible!")
         self.assertIn("is_toxic", data)
+        self.assertIn("toxicity_score", data)
         self.assertIn("model_version", data)
 
 if __name__ == "__main__":
