@@ -1,0 +1,89 @@
+2025-07-09 10:48:09,596 - INFO - Conexión a Supabase establecida con éxito.
+2025-07-09 10:48:59,482 - INFO - Conexión a Supabase establecida con éxito.
+2025-07-09 10:58:33,729 - INFO - Conexión a Supabase establecida con éxito.
+2025-07-09 10:59:35,348 - INFO - Conexión a Supabase establecida con éxito.
+2025-07-09 11:10:20,602 - INFO - Conexión a Supabase establecida con éxito.
+2025-07-09 11:11:01,782 - INFO - Conexión a Supabase establecida con éxito.
+2025-07-09 11:53:11,563 - INFO - Conexión a Supabase establecida con éxito.
+2025-07-09 12:10:35,240 - INFO - Conexión a Supabase establecida con éxito.
+2025-07-09 12:10:45,011 - INFO - Acceso a la raíz de la API
+2025-07-09 12:11:32,275 - INFO - Recibida solicitud de predicción: 'I agree with the protestor.'
+2025-07-09 12:11:32,293 - INFO - Predicción realizada para el texto: I agree with the protestor.
+2025-07-09 12:11:33,499 - INFO - HTTP Request: POST https://emnfhqownmjfobvvdphj.supabase.co/rest/v1/predictions "HTTP/2 201 Created"
+2025-07-09 12:11:33,506 - INFO - Predicción guardada en Supabase correctamente. 'text': I agree with the protestor., 'is_toxic': False, 'toxicity_score': 0.4234939217567444
+2025-07-09 12:19:05,084 - INFO - Conexión a Supabase establecida con éxito.
+2025-07-09 12:19:46,466 - INFO - Conexión a Supabase establecida con éxito.
+2025-07-09 12:20:00,949 - INFO - Predicción realizada para el texto: I agree with the protestor.
+2025-07-09 12:20:01,824 - INFO - HTTP Request: POST https://emnfhqownmjfobvvdphj.supabase.co/rest/v1/predictions "HTTP/2 201 Created"
+2025-07-09 12:21:10,631 - INFO - Conexión a Supabase establecida con éxito.
+2025-07-09 12:21:55,122 - INFO - Conexión a Supabase establecida con éxito.
+2025-07-09 12:21:58,950 - INFO - Acceso a la raíz de la API
+2025-07-09 12:22:57,589 - INFO - Predicción realizada para el texto: I agree with the protestor.
+2025-07-09 12:22:58,730 - INFO - HTTP Request: POST https://emnfhqownmjfobvvdphj.supabase.co/rest/v1/predictions "HTTP/2 201 Created"
+2025-07-09 12:32:13,741 - INFO - Conexión a Supabase establecida con éxito.
+2025-07-09 12:33:49,034 - INFO - Conexión a Supabase establecida con éxito.
+2025-07-09 12:34:31,207 - INFO - Predicción realizada para el texto: I agree with the protestor.
+2025-07-09 12:34:32,164 - INFO - HTTP Request: POST https://emnfhqownmjfobvvdphj.supabase.co/rest/v1/predictions "HTTP/2 201 Created"
+2025-07-09 12:34:32,172 - INFO - Predicción guardada en Supabase correctamente.
+2025-07-09 12:37:47,781 - INFO - Conexión a Supabase establecida con éxito.
+2025-07-09 12:37:54,475 - INFO - Recibida solicitud de predicción: 'I agree with the protestor.'
+2025-07-09 12:37:54,500 - INFO - Predicción realizada para el texto: I agree with the protestor.
+2025-07-09 12:37:55,633 - INFO - HTTP Request: POST https://emnfhqownmjfobvvdphj.supabase.co/rest/v1/predictions "HTTP/2 201 Created"
+2025-07-09 12:37:55,638 - INFO - Predicción guardada en Supabase correctamente.
+2025-07-09 12:46:56,838 - INFO - Conexión a Supabase establecida con éxito.
+2025-07-09 12:47:42,221 - INFO - Recibida solicitud de predicción: 'I agree with the protestor.'
+2025-07-09 12:47:42,233 - INFO - Predicción realizada para el texto: I agree with the protestor.
+2025-07-09 12:47:43,232 - INFO - HTTP Request: POST https://emnfhqownmjfobvvdphj.supabase.co/rest/v1/predictions "HTTP/2 201 Created"
+2025-07-09 12:47:43,238 - INFO - Predicción guardada en Supabase correctamente.
+2025-07-09 12:51:31,811 - INFO - Recibida solicitud de predicción: 'I agree with the protestor.'
+2025-07-09 12:51:31,826 - INFO - Predicción realizada para el texto: I agree with the protestor.
+2025-07-09 12:51:31,826 - WARNING - Supabase no inicializado. Guardando en fallback.
+2025-07-09 12:52:32,114 - INFO - Recibida solicitud de predicción: 'prueba pending_prediction'
+2025-07-09 12:52:32,118 - INFO - Predicción realizada para el texto: prueba pending_prediction
+2025-07-09 12:52:32,118 - WARNING - Supabase no inicializado. Guardando en fallback.
+2025-07-09 12:53:16,586 - WARNING - Variables de entorno de Supabase no válidas o no encontradas.
+2025-07-09 12:53:44,394 - INFO - Recibida solicitud de predicción: 'mas pruebas pendig_prediction'
+2025-07-09 12:53:44,405 - INFO - Predicción realizada para el texto: mas pruebas pendig_prediction
+2025-07-09 12:53:44,405 - WARNING - Supabase no inicializado. Guardando en fallback.
+2025-07-09 12:55:20,580 - WARNING - Variables de entorno de Supabase no válidas o no encontradas.
+2025-07-09 12:56:11,933 - INFO - Recibida solicitud de predicción: 'otra prueba masn'
+2025-07-09 12:56:11,947 - INFO - Predicción realizada para el texto: otra prueba masn
+2025-07-09 12:56:11,947 - WARNING - Supabase no inicializado. Guardando en fallback.
+2025-07-09 13:03:01,112 - WARNING - Variables de entorno de Supabase no válidas o no encontradas.
+2025-07-09 13:04:25,331 - INFO - Conexión a Supabase establecida con éxito.
+2025-07-09 13:07:45,132 - INFO - Conexión a Supabase establecida con éxito.
+2025-07-09 13:08:03,189 - INFO - Conexión a Supabase establecida con éxito.
+2025-07-09 13:08:04,246 - INFO - HTTP Request: POST https://emnfhqownmjfobvvdphj.supabase.co/rest/v1/predictions "HTTP/2 201 Created"
+2025-07-09 13:08:04,350 - INFO - HTTP Request: POST https://emnfhqownmjfobvvdphj.supabase.co/rest/v1/predictions "HTTP/2 201 Created"
+2025-07-09 13:08:04,418 - INFO - HTTP Request: POST https://emnfhqownmjfobvvdphj.supabase.co/rest/v1/predictions "HTTP/2 201 Created"
+2025-07-09 13:08:04,517 - INFO - HTTP Request: POST https://emnfhqownmjfobvvdphj.supabase.co/rest/v1/predictions "HTTP/2 201 Created"
+2025-07-09 13:09:12,062 - INFO - Conexión a Supabase establecida con éxito.
+2025-07-09 13:14:50,508 - INFO - Conexión a Supabase establecida con éxito.
+2025-07-09 13:15:16,797 - INFO - Conexión a Supabase establecida con éxito.
+2025-07-09 13:15:44,621 - INFO - Conexión a Supabase establecida con éxito.
+2025-07-09 13:16:10,045 - INFO - Conexión a Supabase establecida con éxito.
+2025-07-09 13:16:36,769 - INFO - Conexión a Supabase establecida con éxito.
+2025-07-09 13:17:52,993 - WARNING - Variables de entorno de Supabase no válidas o no encontradas.
+2025-07-09 13:18:30,565 - INFO - Recibida solicitud de predicción: 'probando uno dos'
+2025-07-09 13:18:30,578 - INFO - Predicción realizada para el texto: probando uno dos
+2025-07-09 13:18:30,578 - WARNING - Supabase no inicializado. Guardando en fallback.
+2025-07-10 10:09:40,769 - WARNING - Variables de entorno de Supabase no válidas o no encontradas.
+2025-07-10 10:10:11,418 - INFO - Acceso a la raíz de la API
+2025-07-10 10:11:59,600 - INFO - Recibida solicitud de predicción: 'If only people would just take a step back and not make this case about them, because it wasn't about anyone except the two people in that situation.  To lump yourself into this mess and take matters into your own hands makes these kinds of protests selfish and without rational thought and investigation.  The guy in this video is heavily emotional and hyped up and wants to be heard, and when he gets heard he just presses more and more.  He was never out to have a reasonable discussion.  Kudos to the Smerconish for keeping level the whole time and letting Masri make himself out to be a fool.  How dare he and those that tore that city down in protest make this about themselves and to dishonor the entire incident with their own hate.  By the way, since when did police brutality become an epidemic?  I wish everyone would just stop pretending like they were there and they knew EXACTLY what was going on, because there's no measurable amount of people that honestly witnessed this incident, so none of us have a clue on which way this whole issue should have swung.  The grand jury were the most informed, we have to trust the majority rule was the right course of action and let it be.  Also, thank you to the 99.999% of police officers in America that actually serve & protect, even if you're a bit of a jerk when you pull me over, I respect your job and know that someone has to do it and that many people are going to pout about being held accountable to their actions.  People hate police until they need an officer or two around in an emergency.'
+2025-07-10 10:11:59,623 - INFO - Predicción realizada para el texto: If only people would just take a step back and not make this case about them, because it wasn't about anyone except the two people in that situation.  To lump yourself into this mess and take matters into your own hands makes these kinds of protests selfish and without rational thought and investigation.  The guy in this video is heavily emotional and hyped up and wants to be heard, and when he gets heard he just presses more and more.  He was never out to have a reasonable discussion.  Kudos to the Smerconish for keeping level the whole time and letting Masri make himself out to be a fool.  How dare he and those that tore that city down in protest make this about themselves and to dishonor the entire incident with their own hate.  By the way, since when did police brutality become an epidemic?  I wish everyone would just stop pretending like they were there and they knew EXACTLY what was going on, because there's no measurable amount of people that honestly witnessed this incident, so none of us have a clue on which way this whole issue should have swung.  The grand jury were the most informed, we have to trust the majority rule was the right course of action and let it be.  Also, thank you to the 99.999% of police officers in America that actually serve & protect, even if you're a bit of a jerk when you pull me over, I respect your job and know that someone has to do it and that many people are going to pout about being held accountable to their actions.  People hate police until they need an officer or two around in an emergency.
+2025-07-10 10:11:59,624 - WARNING - Supabase no inicializado. Guardando en fallback.
+2025-07-10 10:15:10,081 - WARNING - Variables de entorno de Supabase no válidas o no encontradas.
+2025-07-10 10:15:10,081 - ERROR - Supabase no está disponible. Verifica tus credenciales y conexión.
+2025-07-10 10:15:53,643 - WARNING - Variables de entorno de Supabase no válidas o no encontradas.
+2025-07-10 10:15:53,644 - ERROR - Supabase no está disponible. Verifica tus credenciales y conexión.
+2025-07-10 10:26:48,713 - INFO - Conexión a Supabase establecida con éxito.
+2025-07-10 10:27:32,924 - WARNING - Variables de entorno de Supabase no válidas o no encontradas.
+2025-07-10 10:27:32,925 - ERROR - Supabase no está disponible. Verifica tus credenciales y conexión.
+2025-07-10 10:28:11,281 - WARNING - Variables de entorno de Supabase no válidas o no encontradas.
+2025-07-10 10:28:11,282 - ERROR - Supabase no está disponible. Verifica tus credenciales y conexión.
+2025-07-10 10:31:38,802 - INFO - Conexión a Supabase establecida con éxito.
+2025-07-10 10:32:50,021 - INFO - Conexión a Supabase establecida con éxito.
+2025-07-10 10:32:50,022 - INFO - Reintentando envío de 2 predicciones...
+2025-07-10 10:32:51,366 - INFO - HTTP Request: POST https://emnfhqownmjfobvvdphj.supabase.co//rest/v1/predictions "HTTP/2 201 Created"
+2025-07-10 10:32:51,439 - INFO - HTTP Request: POST https://emnfhqownmjfobvvdphj.supabase.co//rest/v1/predictions "HTTP/2 201 Created"
+2025-07-10 10:32:51,440 - INFO - Todas las predicciones reenviadas correctamente.
