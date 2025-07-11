@@ -1,6 +1,7 @@
 from pydantic import BaseModel
 from typing import Optional, List
 from datetime import datetime
+from typing import List
 
 class PredictionRequest(BaseModel):
     text: str
@@ -19,3 +20,10 @@ class PredictionRecord(BaseModel):
     model_version: Optional[str]
     created_at: datetime
 
+class YouTubeBatchPredictionResponse(BaseModel):
+    video_url: str
+    comments: List[str]
+    translated_comments: List[str]
+    predictions: List[PredictionResponse]
+    average_toxicity_score: float
+    any_toxic: bool
