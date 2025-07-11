@@ -201,4 +201,5 @@ wrapt==1.17.2
 xgboost==3.0.2
 xxhash==3.5.0
 yarl==1.20.1
+youtube_comment_downloader==0.1.76
 logging==0.4.9.6
