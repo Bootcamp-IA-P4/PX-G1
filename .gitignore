@@ -1,0 +1,43 @@
+# Data files (too large for Git)
+*.csv
+*.xlsx
+*.xls
+best_model/
+processed_data/
+nltk_data/
+
+# Python
+__pycache__/
+.python-version
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+.env
+venv/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+
+*.pth
+
+models/results/
+nltk_data/
+processed_data/
+
+
+.pytest_cache/
+logs.log
