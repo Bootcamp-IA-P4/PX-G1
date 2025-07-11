@@ -20,15 +20,10 @@ class PredictionRecord(BaseModel):
     model_version: Optional[str]
     created_at: datetime
 
-class PredictionResponse(BaseModel):
-    text: str
-    is_toxic: bool
-    toxicity_score: float
-    model_version: str
-
 class YouTubeBatchPredictionResponse(BaseModel):
     video_url: str
     comments: List[str]
+    translated_comments: List[str]
     predictions: List[PredictionResponse]
     average_toxicity_score: float
     any_toxic: bool

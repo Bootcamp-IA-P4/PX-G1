@@ -6,7 +6,7 @@ from ..config import MODEL_VERSION
 from ..supabase_client import supabase
 from ..model_loader import predict_label_with_score
 from ..utils.fallback import save_to_fallback
-from ..utils.extract_youtube_comments import extract_comments
+from ..utils.extract_youtube_comments import extract_comments, translate_if_needed
 
 import logging
 from logs.setup_loggers import setup_logging
@@ -85,7 +85,9 @@ def predict_youtube_comments(
 ):
     try:
         comments = extract_comments(video_url, limit)
-        predictions = [predict_label_with_score(comment) for comment in comments]
+        translated_comments = [translate_if_needed(c, target_lang="en") for c in comments]
+        
+        predictions = [predict_label_with_score(tc) for tc in translated_comments]
         is_toxic_list = [p[0] for p in predictions]
         scores = [p[1] for p in predictions]
 
@@ -94,7 +96,7 @@ def predict_youtube_comments(
 
         for i in range(len(comments)):
             prediction_data = {
-                "text": comments[i],
+                "text": translated_comments[i],
                 "is_toxic": is_toxic_list[i],
                 "toxicity_score": scores[i],
                 "model_version": MODEL_VERSION,
@@ -112,9 +114,10 @@ def predict_youtube_comments(
         return YouTubeBatchPredictionResponse(
             video_url=video_url,
             comments=comments,
+            translated_comments=translated_comments,
             predictions=[
                 PredictionResponse(
-                    text=comments[i],
+                    text=translated_comments[i],
                     is_toxic=is_toxic_list[i],
                     toxicity_score=scores[i],
                     model_version=MODEL_VERSION
