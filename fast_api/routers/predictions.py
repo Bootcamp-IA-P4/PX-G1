@@ -92,6 +92,23 @@ def predict_youtube_comments(
         avg_score = sum(scores) / len(scores) if scores else 0.0
         any_toxic = any(is_toxic_list)
 
+        for i in range(len(comments)):
+            prediction_data = {
+                "text": comments[i],
+                "is_toxic": is_toxic_list[i],
+                "toxicity_score": scores[i],
+                "model_version": MODEL_VERSION,
+            }
+
+            if supabase:
+                try:
+                    supabase.table("predictions").insert(prediction_data).execute()
+                except Exception as e:
+                    logging.error(f"Error al guardar en Supabase: {e}")
+                    save_to_fallback(prediction_data)
+            else:
+                save_to_fallback(prediction_data)
+
         return YouTubeBatchPredictionResponse(
             video_url=video_url,
             comments=comments,
@@ -106,6 +123,7 @@ def predict_youtube_comments(
             average_toxicity_score=avg_score,
             any_toxic=any_toxic
         )
+
     except Exception as e:
         logging.error(f"❌ Error total: {e}")
         raise HTTPException(status_code=500, detail=f"Error extracting or predicting comments: {str(e)}")
