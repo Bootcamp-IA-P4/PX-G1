@@ -87,3 +87,63 @@
 2025-07-10 10:32:51,366 - INFO - HTTP Request: POST https://emnfhqownmjfobvvdphj.supabase.co//rest/v1/predictions "HTTP/2 201 Created"
 2025-07-10 10:32:51,439 - INFO - HTTP Request: POST https://emnfhqownmjfobvvdphj.supabase.co//rest/v1/predictions "HTTP/2 201 Created"
 2025-07-10 10:32:51,440 - INFO - Todas las predicciones reenviadas correctamente.
+2025-07-10 13:20:33,462 - INFO - Conexión a Supabase establecida con éxito.
+2025-07-10 13:24:20,030 - INFO - Acceso a la raíz de la API
+2025-07-10 13:25:52,564 - INFO - Recibida solicitud de predicción: 'fucking awesome'
+2025-07-10 13:25:52,595 - INFO - Predicción realizada para el texto: fucking awesome
+2025-07-10 13:25:53,858 - INFO - HTTP Request: POST https://emnfhqownmjfobvvdphj.supabase.co//rest/v1/predictions "HTTP/2 201 Created"
+2025-07-10 13:25:53,865 - INFO - Predicción guardada en Supabase correctamente.
+2025-07-10 13:27:08,472 - INFO - Recibida solicitud de predicción: 'There are a very large number of people who do not like police officers. They are called Criminals and its the reason we have police officers. The fact that Criminals do not like police officers is a testament to the good work that police officers do in protecting the public. When our children or our family are in danger, we do not hessitate to call for help, and we call the Police. Its about time people stopped complaining and started to give the Police some respect for the hard work and dedication that often requires them to put their lives on the line, to serve the public.'
+2025-07-10 13:27:08,486 - INFO - Predicción realizada para el texto: There are a very large number of people who do not like police officers. They are called Criminals and its the reason we have police officers. The fact that Criminals do not like police officers is a testament to the good work that police officers do in protecting the public. When our children or our family are in danger, we do not hessitate to call for help, and we call the Police. Its about time people stopped complaining and started to give the Police some respect for the hard work and dedication that often requires them to put their lives on the line, to serve the public.
+2025-07-10 13:27:08,670 - INFO - HTTP Request: POST https://emnfhqownmjfobvvdphj.supabase.co//rest/v1/predictions "HTTP/2 201 Created"
+2025-07-10 13:27:08,671 - INFO - Predicción guardada en Supabase correctamente.
+2025-07-10 13:28:01,604 - INFO - Recibida solicitud de predicción: 'what a fucking shit'
+2025-07-10 13:28:01,608 - INFO - Predicción realizada para el texto: what a fucking shit
+2025-07-10 13:28:01,974 - INFO - HTTP Request: POST https://emnfhqownmjfobvvdphj.supabase.co//rest/v1/predictions "HTTP/2 201 Created"
+2025-07-10 13:28:01,975 - INFO - Predicción guardada en Supabase correctamente.
+2025-07-10 13:28:20,835 - INFO - Recibida solicitud de predicción: 'me cago en to'
+2025-07-10 13:28:20,839 - INFO - Predicción realizada para el texto: me cago en to
+2025-07-10 13:28:20,979 - INFO - HTTP Request: POST https://emnfhqownmjfobvvdphj.supabase.co//rest/v1/predictions "HTTP/2 201 Created"
+2025-07-10 13:28:20,980 - INFO - Predicción guardada en Supabase correctamente.
+2025-07-10 13:29:03,102 - INFO - Recibida solicitud de predicción: 'I curse everything'
+2025-07-10 13:29:03,105 - INFO - Predicción realizada para el texto: I curse everything
+2025-07-10 13:29:03,314 - INFO - HTTP Request: POST https://emnfhqownmjfobvvdphj.supabase.co//rest/v1/predictions "HTTP/2 201 Created"
+2025-07-10 13:29:03,321 - INFO - Predicción guardada en Supabase correctamente.
+2025-07-10 13:29:30,492 - INFO - Recibida solicitud de predicción: 'News fucktards...........puppet players,,,,,all they are paid liars '
+2025-07-10 13:29:30,495 - INFO - Predicción realizada para el texto: News fucktards...........puppet players,,,,,all they are paid liars 
+2025-07-10 13:29:30,649 - INFO - HTTP Request: POST https://emnfhqownmjfobvvdphj.supabase.co//rest/v1/predictions "HTTP/2 201 Created"
+2025-07-10 13:29:30,651 - INFO - Predicción guardada en Supabase correctamente.
+2025-07-10 13:30:09,455 - INFO - Recibida solicitud de predicción: 'News fucktards...........puppet players,,,,,all they are paid liars'
+2025-07-10 13:30:09,461 - INFO - Predicción realizada para el texto: News fucktards...........puppet players,,,,,all they are paid liars
+2025-07-10 13:30:09,801 - INFO - HTTP Request: POST https://emnfhqownmjfobvvdphj.supabase.co//rest/v1/predictions "HTTP/2 201 Created"
+2025-07-10 13:30:09,802 - INFO - Predicción guardada en Supabase correctamente.
+2025-07-10 13:31:50,212 - INFO - Conexión a Supabase establecida con éxito.
+2025-07-10 13:32:08,025 - INFO - Recibida solicitud de predicción: 'News fucktards...........puppet players,,,,,all they are paid liars'
+2025-07-10 13:32:08,042 - INFO - Predicción realizada para el texto: News fucktards...........puppet players,,,,,all they are paid liars
+2025-07-10 13:32:09,195 - INFO - HTTP Request: POST https://emnfhqownmjfobvvdphj.supabase.co//rest/v1/predictions "HTTP/2 201 Created"
+2025-07-10 13:32:09,203 - INFO - Predicción guardada en Supabase correctamente.
+2025-07-10 13:32:47,796 - INFO - Conexión a Supabase establecida con éxito.
+2025-07-10 13:33:02,802 - INFO - Recibida solicitud de predicción: 'News fucktards...........puppet players,,,,,all they are paid liars'
+2025-07-10 13:33:02,821 - INFO - Predicción realizada para el texto: News fucktards...........puppet players,,,,,all they are paid liars
+2025-07-10 13:33:03,642 - INFO - HTTP Request: POST https://emnfhqownmjfobvvdphj.supabase.co//rest/v1/predictions "HTTP/2 201 Created"
+2025-07-10 13:33:03,650 - INFO - Predicción guardada en Supabase correctamente.
+2025-07-10 13:33:21,014 - INFO - Recibida solicitud de predicción: 'News fucktards...........puppet players,,,,,all they are paid liars'
+2025-07-10 13:33:21,018 - INFO - Predicción realizada para el texto: News fucktards...........puppet players,,,,,all they are paid liars
+2025-07-10 13:33:21,129 - INFO - HTTP Request: POST https://emnfhqownmjfobvvdphj.supabase.co//rest/v1/predictions "HTTP/2 201 Created"
+2025-07-10 13:33:21,129 - INFO - Predicción guardada en Supabase correctamente.
+2025-07-10 13:33:57,372 - INFO - Conexión a Supabase establecida con éxito.
+2025-07-10 13:34:10,804 - INFO - Recibida solicitud de predicción: 'News fucktards...........puppet players,,,,,all they are paid liars'
+2025-07-10 13:34:10,815 - INFO - Predicción realizada para el texto: News fucktards...........puppet players,,,,,all they are paid liars
+2025-07-10 13:34:11,835 - INFO - HTTP Request: POST https://emnfhqownmjfobvvdphj.supabase.co//rest/v1/predictions "HTTP/2 201 Created"
+2025-07-10 13:34:11,842 - INFO - Predicción guardada en Supabase correctamente.
+2025-07-10 13:35:35,795 - INFO - Recibida solicitud de predicción: 'News fucktards...........puppet players,,,,,all they are paid liars'
+2025-07-10 13:35:35,800 - INFO - Predicción realizada para el texto: News fucktards...........puppet players,,,,,all they are paid liars
+2025-07-10 13:35:35,998 - INFO - HTTP Request: POST https://emnfhqownmjfobvvdphj.supabase.co//rest/v1/predictions "HTTP/2 201 Created"
+2025-07-10 13:35:36,000 - INFO - Predicción guardada en Supabase correctamente.
+2025-07-10 13:36:19,512 - INFO - Conexión a Supabase establecida con éxito.
+2025-07-10 13:36:48,329 - INFO - Recibida solicitud de predicción: 'News fucktards...........puppet players,,,,,all they are paid liars'
+2025-07-10 13:36:48,355 - INFO - Predicción realizada para el texto: News fucktards...........puppet players,,,,,all they are paid liars
+2025-07-10 13:36:49,691 - INFO - HTTP Request: POST https://emnfhqownmjfobvvdphj.supabase.co//rest/v1/predictions "HTTP/2 201 Created"
+2025-07-10 13:36:49,700 - INFO - Predicción guardada en Supabase correctamente.
+2025-07-10 13:42:36,311 - INFO - Conexión a Supabase establecida con éxito.
+2025-07-10 13:43:34,090 - INFO - Conexión a Supabase establecida con éxito.
