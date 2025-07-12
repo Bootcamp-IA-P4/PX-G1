@@ -7,7 +7,7 @@ from logs.setup_loggers import setup_logging
 setup_logging()
 
 def extract_comments(video_url: str, limit: int = 20) -> list[str]:
-    print(f"🟡 Intentando extraer comentarios de: {video_url}")
+    logging.info(f"🟡 Intentando extraer comentarios de: {video_url}")
     
     try:
         limit = int(limit)
@@ -26,7 +26,6 @@ def extract_comments(video_url: str, limit: int = 20) -> list[str]:
 
     except Exception as e:
         logging.error(f"❌ Error durante el scraping de comentarios: {e}")
-        print(f"❌ Error real durante scraping: {e}")
         raise Exception(f"Error extracting comments: {e}")
     
 def translate_if_needed(text: str, target_lang="en") -> str:

@@ -5,35 +5,32 @@ import {
   CardContent,
   CardDescription,
   CardHeader,
+  CardHeaderContent,
+  CardIcon,
   CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { History, RefreshCw, AlertTriangle, CheckCircle } from "lucide-react";
+import { History, AlertTriangle, CheckCircle } from "lucide-react";
 import { PredictionRecord } from "@/lib/types";
 import { formatDate, getToxicityLevel } from "@/lib/utils";
 
 interface PredictionHistoryProps {
   history: PredictionRecord[];
-  onRefresh: () => void;
-  loading: boolean;
 }
 
-export function PredictionHistory({
-  history,
-  onRefresh,
-  loading,
-}: PredictionHistoryProps) {
+export function PredictionHistory({ history }: PredictionHistoryProps) {
   if (history.length === 0) {
     return (
-      <Card className="w-full max-w-2xl">
+      <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <History className="h-5 w-5 text-gray-600" />
-            Historial de Análisis
-          </CardTitle>
-          <CardDescription>
-            Aquí aparecerán tus análisis anteriores
-          </CardDescription>
+          <CardIcon className="bg-gray-500">
+            <History className="h-5 w-5 text-white" />
+          </CardIcon>
+          <CardHeaderContent>
+            <CardTitle>Historial de Análisis</CardTitle>
+            <CardDescription>
+              Aquí aparecerán tus análisis anteriores
+            </CardDescription>
+          </CardHeaderContent>
         </CardHeader>
         <CardContent>
           <div className="text-center py-8 text-gray-500">
@@ -47,27 +44,21 @@ export function PredictionHistory({
   }
 
   return (
-    <Card className="w-full max-w-2xl">
+    <Card>
       <CardHeader>
-        <div className="flex items-center justify-between">
-          <div>
-            <CardTitle className="flex items-center gap-2">
-              <History className="h-5 w-5 text-gray-600" />
-              Historial de Análisis
-            </CardTitle>
-            <CardDescription>
-              Últimos {history.length} análisis realizados
-            </CardDescription>
+        <CardIcon className="bg-gray-500">
+          <History className="h-5 w-5 text-white" />
+        </CardIcon>
+        <CardHeaderContent>
+          <div className="flex-1 flex items-center justify-between">
+            <div>
+              <CardTitle>Historial de Análisis</CardTitle>
+              <CardDescription>
+                Últimos {history.length} análisis realizados
+              </CardDescription>
+            </div>
           </div>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={onRefresh}
-            disabled={loading}
-          >
-            <RefreshCw className={`h-4 w-4 ${loading ? "animate-spin" : ""}`} />
-          </Button>
-        </div>
+        </CardHeaderContent>
       </CardHeader>
       <CardContent>
         <div className="space-y-3 max-h-96 overflow-y-auto">
