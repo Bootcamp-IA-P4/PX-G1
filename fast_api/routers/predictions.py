@@ -1,11 +1,13 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Query
 from typing import List
 
-from ..schemas import PredictionRequest, PredictionResponse, PredictionRecord
+from ..schemas import PredictionRequest, PredictionResponse, PredictionRecord, YouTubeBatchPredictionResponse
 from ..config import MODEL_VERSION
 from ..supabase_client import supabase
 from ..model_loader import predict_label_with_score
 from ..utils.fallback import save_to_fallback
+from ..utils.extract_youtube_comments import extract_comments, translate_if_needed
+
 import logging
 from logs.setup_loggers import setup_logging
 setup_logging()
@@ -74,3 +76,57 @@ def get_history(limit: int = 10):
         logging.error(f"Error al obtener historial: {e}")
         print(f"❌ Error al obtener historial: {e}")
         raise HTTPException(status_code=500, detail="Error querying Supabase")
+    
+# POST /predict/youtube
+@router.post("/predict/youtube", response_model=YouTubeBatchPredictionResponse)
+def predict_youtube_comments(
+    video_url: str,
+    limit: int = Query(20, ge=1, le=100)
+):
+    try:
+        comments = extract_comments(video_url, limit)
+        translated_comments = [translate_if_needed(c, target_lang="en") for c in comments]
+        
+        predictions = [predict_label_with_score(tc) for tc in translated_comments]
+        is_toxic_list = [p[0] for p in predictions]
+        scores = [p[1] for p in predictions]
+
+        avg_score = sum(scores) / len(scores) if scores else 0.0
+        any_toxic = any(is_toxic_list)
+
+        for i in range(len(comments)):
+            prediction_data = {
+                "text": translated_comments[i],
+                "is_toxic": is_toxic_list[i],
+                "toxicity_score": scores[i],
+                "model_version": MODEL_VERSION,
+            }
+
+            if supabase:
+                try:
+                    supabase.table("predictions").insert(prediction_data).execute()
+                except Exception as e:
+                    logging.error(f"Error al guardar en Supabase: {e}")
+                    save_to_fallback(prediction_data)
+            else:
+                save_to_fallback(prediction_data)
+
+        return YouTubeBatchPredictionResponse(
+            video_url=video_url,
+            comments=comments,
+            translated_comments=translated_comments,
+            predictions=[
+                PredictionResponse(
+                    text=translated_comments[i],
+                    is_toxic=is_toxic_list[i],
+                    toxicity_score=scores[i],
+                    model_version=MODEL_VERSION
+                ) for i in range(len(comments))
+            ],
+            average_toxicity_score=avg_score,
+            any_toxic=any_toxic
+        )
+
+    except Exception as e:
+        logging.error(f"❌ Error total: {e}")
+        raise HTTPException(status_code=500, detail=f"Error extracting or predicting comments: {str(e)}")

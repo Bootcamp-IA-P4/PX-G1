@@ -8,13 +8,15 @@ import {
   CardContent,
   CardDescription,
   CardHeader,
+  CardHeaderContent,
+  CardIcon,
   CardTitle,
 } from "@/components/ui/card";
 import { MessageSquare, Send } from "lucide-react";
 import { PredictionResponse } from "@/lib/types";
 
 interface PredictionFormProps {
-  onPredict: (text: string) => Promise<PredictionResponse | null>;
+  onPredict: (text: string) => Promise<PredictionResponse>;
   loading: boolean;
   onResult: (result: PredictionResponse) => void;
 }
@@ -38,20 +40,25 @@ export function PredictionForm({
   };
 
   return (
-    <Card className="w-full max-w-2xl">
+    <Card>
       <CardHeader>
-        <CardTitle className="flex items-center gap-2 text-xl">
-          <MessageSquare className="h-6 w-6 text-red-600" />
-          Analizador de Comentarios Tóxicos
-        </CardTitle>
-        <CardDescription>
-          Ingresa un comentario para analizar si contiene contenido tóxico
-        </CardDescription>
+        <CardIcon>
+          <MessageSquare className="h-5 w-5 text-white" />
+        </CardIcon>
+        <CardHeaderContent>
+          <CardTitle>Analizador de Comentarios Tóxicos</CardTitle>
+          <CardDescription>
+            Ingresa un comentario para analizar si contiene contenido tóxico
+          </CardDescription>
+        </CardHeaderContent>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <label htmlFor="comment" className="text-sm font-medium">
+            <label
+              htmlFor="comment"
+              className="block text-sm font-medium text-gray-700"
+            >
               Comentario
             </label>
             <Textarea
@@ -70,12 +77,10 @@ export function PredictionForm({
             type="submit"
             disabled={!text.trim() || loading}
             className="w-full"
+            loading={loading}
           >
             {loading ? (
-              <>
-                <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                Analizando...
-              </>
+              <>Analizando...</>
             ) : (
               <>
                 <Send className="h-4 w-4 mr-2" />

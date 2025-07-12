@@ -5,6 +5,8 @@ import {
   CardContent,
   CardDescription,
   CardHeader,
+  CardHeaderContent,
+  CardIcon,
   CardTitle,
 } from "@/components/ui/card";
 import { AlertTriangle, CheckCircle, Shield } from "lucide-react";
@@ -20,21 +22,23 @@ export function PredictionResult({ result }: PredictionResultProps) {
   const percentage = Math.round(result.toxicity_score * 100);
 
   return (
-    <Card className="w-full max-w-2xl">
+    <Card>
       <CardHeader>
-        <CardTitle className="flex items-center gap-2">
+        <CardIcon className={result.is_toxic ? "bg-red-600" : "bg-green-600"}>
           {result.is_toxic ? (
-            <AlertTriangle className="h-5 w-5 text-red-600" />
+            <AlertTriangle className="h-5 w-5 text-white" />
           ) : (
-            <CheckCircle className="h-5 w-5 text-green-600" />
+            <CheckCircle className="h-5 w-5 text-white" />
           )}
-          Resultado del Análisis
-        </CardTitle>
-        <CardDescription>
-          Análisis completado con el modelo {result.model_version}
-        </CardDescription>
+        </CardIcon>
+        <CardHeaderContent>
+          <CardTitle>Resultado del Análisis</CardTitle>
+          <CardDescription>
+            Análisis completado con el modelo {result.model_version}
+          </CardDescription>
+        </CardHeaderContent>
       </CardHeader>
-      <CardContent className="space-y-6">
+      <CardContent>
         {/* Texto analizado */}
         <div className="space-y-2">
           <h4 className="text-sm font-medium text-gray-700">
