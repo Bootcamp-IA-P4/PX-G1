@@ -125,6 +125,7 @@ Tanto el Backend como el Frontend están dockerizados y la imágen está subida 
 
 - **Backend image:** `docker push allaharuty/px-g1-app:tagname`
 
+Ver código fuente en [la rama feature/docker.](https://github.com/Bootcamp-IA-P4/PX-G1/tree/feature/docker)
 
 ## Despliegue
 
