@@ -1,6 +1,6 @@
-<img src="images/logo.png"></img>
+![Logo](images/logo.png)
 
-# Proyecto X de NLP: Analisis de Sentimientos para Factoría F5 por el grupo 1.
+# Proyecto X de NLP: Análisis de Sentimientos para Factoría F5 por el grupo 1.
 
 Andrea Alonso
 
@@ -119,11 +119,11 @@ Proceso de predicción:
 
 ## Dockerización
 
-Tanto el Backend como el Frontend están dockerizados y la imágen está subida a Dockerhub y se pueden descargar con el siguiente comando:
+Tanto el Backend como el Frontend están dockerizados y la imagen está subida a Dockerhub y se pueden descargar con el siguiente comando:
 
-- **Frontend image:** `docker push allaharuty/px-g1-frontend:tagname`
+- **Imagen Frontend:** `docker push allaharuty/px-g1-frontend:tagname`
 
-- **Backend image:** `docker push allaharuty/px-g1-app:tagname`
+- **Imagen Backend:** `docker push allaharuty/px-g1-app:tagname`
 
 Ver código fuente en [la rama feature/docker.](https://github.com/Bootcamp-IA-P4/PX-G1/tree/feature/docker)
 
@@ -180,7 +180,7 @@ pytest
 El equipo ha trabajado en conjunto en los primeros pasos como el Análisis Exploratorio de Datos y el entrenamiento del Modelo adecuado y tras una comparación de los resultados de cada integrante, se ha realizado un EDA en conjunto extrayendo todo lo común e interesante y se ha escogido el modelo con las mejores métricas.
 
 
-TODO: Meter métricas del modelo, el nombrel algoritmo, técnicas, etc...
+TODO: Meter métricas del modelo, el nombre del algoritmo, técnicas, etc...
 
 Se pueden ver los EDAs realizados en la carpeta EDAs de la rama [feature/EDA](https://github.com/Bootcamp-IA-P4/PX-G1/tree/feature/EDA) donde cada integrante tiene su propio archivo. 
 
