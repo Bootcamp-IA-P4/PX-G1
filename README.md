@@ -179,8 +179,47 @@ pytest
 
 El equipo ha trabajado en conjunto en los primeros pasos como el Análisis Exploratorio de Datos y el entrenamiento del Modelo adecuado y tras una comparación de los resultados de cada integrante, se ha realizado un EDA en conjunto extrayendo todo lo común e interesante y se ha escogido el modelo con las mejores métricas.
 
+## Nuestro modelo elegido fue XGBoost:
+Tras la optimizacion de hiperparametros con Optuna nos dio las siguientes metricas
+![alt text](<Captura de pantalla 2025-07-14 111801.png>)
 
-TODO: Meter métricas del modelo, el nombre del algoritmo, técnicas, etc...
+### 🎯 F1 Score
+
+| Tipo       | Valor          | Significado                                                                                                   |
+| ---------- | -------------- | ------------------------------------------------------------------------------------------------------------- |
+| `Train F1` | 0.9420         | Rendimiento en el conjunto de entrenamiento. Muy alto: el modelo se ajusta bien a los datos de entrenamiento. |
+| `CV F1`    | 0.8574 ±0.0073 | Promedio del F1 score en validación cruzada. Buena generalización.                                            |
+| `Test F1`  | 0.8977         | Rendimiento en el conjunto de test. Algo más bajo que `Train`, lo cual es esperable.                          |
+
+🔍 Gap overfitting F1: 0.0443
+
+    Diferencia entre Train F1 y Test F1. Un gap pequeño (<0.05) indica que no hay sobreajuste severo.
+
+### 📉 LogLoss (Logarithmic Loss)
+Esta métrica penaliza más cuando el modelo está muy seguro y se equivoca. Cuanto más bajo, mejor.
+
+| Tipo                              | Valor                                          | Significado                                    |
+| --------------------------------- | ---------------------------------------------- | ---------------------------------------------- |
+| `Train LogLoss`                   | 0.2531                                         | Error promedio de predicción en entrenamiento. |
+| `Test LogLoss`                    | 0.3083                                         | Error promedio en test.                        |
+| `Gap overfitting LogLoss: 0.0552` | Diferencia entre ambos. Aceptable si es < 0.1. |                                                |
+
+### 🏁 Modelo final
+
+- **Train F1:** 0.9427
+
+- **Test F1:** 0.8958
+
+- **CV F1:** 0.854 ±0.014 (estable)
+
+- **Overfitting gap F1:** 0.0469 → Buena generalización
+
+- **Train LogLoss:** 0.2552 | Test LogLoss: 0.3093 
+
+- **Overfitting gap LogLoss:** 0.0541 → Bajo
+
+### 📌 Conclusión:
+El modelo está bien entrenado, con buen rendimiento en todos los conjuntos y sin señales graves de overfitting.
 
 Se pueden ver los EDAs realizados en la carpeta EDAs de la rama [feature/EDA](https://github.com/Bootcamp-IA-P4/PX-G1/tree/feature/EDA) donde cada integrante tiene su propio archivo. 
 
