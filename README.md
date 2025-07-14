@@ -181,6 +181,7 @@ El equipo ha trabajado en conjunto en los primeros pasos como el Análisis Explo
 
 ## Nuestro modelo elegido fue XGBoost:
 Tras la optimizacion de hiperparametros con Optuna nos dio las siguientes metricas
+
 ![alt text](<Captura de pantalla 2025-07-14 111801.png>)
 
 ### 🎯 F1 Score
