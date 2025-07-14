@@ -219,6 +219,7 @@ Esta métrica penaliza más cuando el modelo está muy seguro y se equivoca. Cua
 - **Overfitting gap LogLoss:** 0.0541 → Bajo
 
 ### 📌 Conclusión:
+
 El modelo está bien entrenado, con buen rendimiento en todos los conjuntos y sin señales graves de overfitting.
 
 Se pueden ver los EDAs realizados en la carpeta EDAs de la rama [feature/EDA](https://github.com/Bootcamp-IA-P4/PX-G1/tree/feature/EDA) donde cada integrante tiene su propio archivo. 
